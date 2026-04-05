@@ -1,5 +1,5 @@
 /* ===================================================
-   script.js — Nicolas Canadell Portfolio (v2)
+   script.js — Nicolas Canadell Portfolio v3
    =================================================== */
 
 /* ── 1. REVEAL AU SCROLL ── */
@@ -16,7 +16,6 @@ tlItems.forEach(el => revealObs.observe(el));
 
 /* ── 2. BARRES DE COMPÉTENCES ── */
 const barFills = document.querySelectorAll('.bar-fill');
-
 const barObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) {
@@ -25,19 +24,20 @@ const barObs = new IntersectionObserver(entries => {
     }
   });
 }, { threshold: 0.25 });
-
 barFills.forEach(b => barObs.observe(b));
 
 
-/* ── 3. SIDEBAR DOT ACTIF ── */
+/* ── 3. NAVBAR — LIEN ACTIF ── */
 const sections = document.querySelectorAll('section[id]');
-const navLinks  = document.querySelectorAll('.nav-link');
+const navLinks = document.querySelectorAll('.nav-link');
 
 const sectionObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) {
       const id = e.target.id;
-      navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + id));
+      navLinks.forEach(l => {
+        l.classList.toggle('active', l.dataset.section === id);
+      });
     }
   });
 }, { rootMargin: '-40% 0px -50% 0px' });
@@ -45,15 +45,15 @@ const sectionObs = new IntersectionObserver(entries => {
 sections.forEach(s => sectionObs.observe(s));
 
 
-/* ── 4. COMPTEUR DE STATS ANIMÉ ── */
+/* ── 4. COMPTEUR ANIMÉ ── */
 function animateCounter(el) {
-  const target = parseFloat(el.textContent.replace('+', ''));
-  const isPlus = el.textContent.includes('+');
+  const raw    = el.textContent.trim();
+  const isPlus = raw.includes('+');
+  const target = parseFloat(raw);
   const duration = 1400;
-  const start = performance.now();
-
-  const tick = (now) => {
-    const p = Math.min((now - start) / duration, 1);
+  const start  = performance.now();
+  const tick = now => {
+    const p    = Math.min((now - start) / duration, 1);
     const ease = 1 - Math.pow(1 - p, 3);
     el.textContent = Math.round(target * ease) + (isPlus ? '+' : '');
     if (p < 1) requestAnimationFrame(tick);
@@ -61,17 +61,12 @@ function animateCounter(el) {
   requestAnimationFrame(tick);
 }
 
-const statNums = document.querySelectorAll('.stat-number');
 const counterObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
-    if (e.isIntersecting) {
-      animateCounter(e.target);
-      counterObs.unobserve(e.target);
-    }
+    if (e.isIntersecting) { animateCounter(e.target); counterObs.unobserve(e.target); }
   });
 }, { threshold: 0.5 });
-
-statNums.forEach(n => counterObs.observe(n));
+document.querySelectorAll('.stat-number').forEach(n => counterObs.observe(n));
 
 
 /* ── 5. FILTRE PARCOURS ── */
@@ -83,7 +78,6 @@ filterBtns.forEach(btn => {
     filterBtns.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     const filter = btn.dataset.filter;
-
     parcoursItems.forEach(item => {
       const match = filter === 'all' || item.dataset.cat === filter;
       if (match) {
@@ -91,8 +85,7 @@ filterBtns.forEach(btn => {
         item.classList.remove('visible');
         setTimeout(() => item.classList.add('visible'), 30);
       } else {
-        item.classList.add('hidden');
-        item.classList.remove('visible');
+        item.classList.add('hidden'); item.classList.remove('visible');
       }
     });
   });
@@ -115,62 +108,47 @@ if (form) {
 
     if (!name || !email || !message) {
       formNote.textContent = '⚠ Veuillez remplir tous les champs.';
-      formNote.className = 'form-note error';
-      return;
+      formNote.className = 'form-note error'; return;
     }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       formNote.textContent = '⚠ Adresse email invalide.';
-      formNote.className = 'form-note error';
-      return;
+      formNote.className = 'form-note error'; return;
     }
 
     const btn = form.querySelector('button[type="submit"]');
-    btn.disabled = true;
-    btn.textContent = 'Envoi…';
-
+    btn.disabled = true; btn.textContent = 'Envoi…';
     setTimeout(() => {
       formNote.textContent = '✓ Message envoyé ! Je vous réponds rapidement.';
       formNote.className = 'form-note success';
-      form.reset();
-      btn.disabled = false;
-      btn.textContent = 'Envoyer le message →';
+      form.reset(); btn.disabled = false; btn.textContent = 'Envoyer le message →';
     }, 1200);
   });
 }
 
 
-/* ── 7. BOUTON RETOUR EN HAUT ── */
+/* ── 7. BACK TO TOP ── */
 const backToTop = document.getElementById('back-to-top');
-
 window.addEventListener('scroll', () => {
-  if (backToTop) {
-    backToTop.classList.toggle('visible', window.scrollY > 400);
-  }
+  if (backToTop) backToTop.classList.toggle('visible', window.scrollY > 400);
 }, { passive: true });
-
 if (backToTop) {
-  backToTop.addEventListener('click', e => {
-    e.preventDefault();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+  backToTop.addEventListener('click', e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
 }
 
 
 /* ── 8. HAMBURGER MOBILE ── */
 const hamburger = document.getElementById('hamburger');
-const sidebar   = document.getElementById('sidebar');
+const navMobile = document.getElementById('nav-mobile');
 
-if (hamburger && sidebar) {
+if (hamburger && navMobile) {
   hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('open');
-    sidebar.classList.toggle('open');
+    navMobile.classList.toggle('open');
   });
-
-  // Fermer en cliquant un lien
-  sidebar.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
+  navMobile.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
       hamburger.classList.remove('open');
-      sidebar.classList.remove('open');
+      navMobile.classList.remove('open');
     });
   });
 }
