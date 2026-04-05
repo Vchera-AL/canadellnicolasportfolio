@@ -503,6 +503,9 @@ body::before {
    VEILLE
    ═══════════════════════════════════════════ */
 .veille-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.veille-grid.single-veille { display: flex; justify-content: center; }
+.single-veille .veille-card { max-width: 500px; width: 100%; border-color: rgba(108,99,255,0.25); text-align: center; }
+.single-veille .veille-sources { justify-content: center; margin-bottom: 8px; }
 .veille-card { padding: 26px; display: flex; flex-direction: column; gap: 12px; }
 .veille-icon-wrap {
   width: 42px; height: 42px; border-radius: 11px;
