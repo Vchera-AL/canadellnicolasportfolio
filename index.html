@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio BTS SIO SISR – Étudiant en systèmes, réseaux et infrastructure.">
+    <meta name="description" content="Portfolio BTS SIO SISR – Nicolas Canadell, étudiant en systèmes, réseaux et infrastructure à Toulouse.">
     <title>Portfolio · Nicolas Canadell</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
 
+    <!-- Bouton hamburger (mobile) -->
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+    </button>
 
     <!-- Sidebar -->
     <aside class="sidebar" id="sidebar">
@@ -19,15 +25,15 @@
             <span class="logo-bracket">&lt;</span>NC<span class="logo-bracket">/&gt;</span>
         </div>
         <nav class="sidebar-nav">
-            <a href="#hero"               class="nav-link" data-label="Accueil"><span class="nav-dot"></span></a>
-            <a href="#about"              class="nav-link" data-label="Profil"><span class="nav-dot"></span></a>
-            <a href="#formation"          class="nav-link" data-label="Formation"><span class="nav-dot"></span></a>
-            <a href="#parcours"           class="nav-link" data-label="Parcours"><span class="nav-dot"></span></a>
-            <a href="#skills"             class="nav-link" data-label="Compétences"><span class="nav-dot"></span></a>
-            <a href="#skill-table"        class="nav-link" data-label="Tableau"><span class="nav-dot"></span></a>
-            <a href="#projects"           class="nav-link" data-label="Projets"><span class="nav-dot"></span></a>
-            <a href="#veille"             class="nav-link" data-label="Veille"><span class="nav-dot"></span></a>
-            <a href="#contact"            class="nav-link" data-label="Contact"><span class="nav-dot"></span></a>
+            <a href="#hero"        class="nav-link" data-label="Accueil"><span class="nav-dot"></span></a>
+            <a href="#about"       class="nav-link" data-label="Profil"><span class="nav-dot"></span></a>
+            <a href="#formation"   class="nav-link" data-label="Formation"><span class="nav-dot"></span></a>
+            <a href="#parcours"    class="nav-link" data-label="Parcours"><span class="nav-dot"></span></a>
+            <a href="#skills"      class="nav-link" data-label="Compétences"><span class="nav-dot"></span></a>
+            <a href="#skill-table" class="nav-link" data-label="Tableau"><span class="nav-dot"></span></a>
+            <a href="#projects"    class="nav-link" data-label="Projets"><span class="nav-dot"></span></a>
+            <a href="#veille"      class="nav-link" data-label="Veille"><span class="nav-dot"></span></a>
+            <a href="#contact"     class="nav-link" data-label="Contact"><span class="nav-dot"></span></a>
         </nav>
         <div class="sidebar-socials">
             <a href="mailto:ton.email@example.com" class="social-icon" title="Email">✉</a>
@@ -42,7 +48,7 @@
             <div class="hero-inner reveal">
                 <p class="hero-tag">BTS SIO · Option SISR · Promotion 2024–2026</p>
                 <h1 class="hero-name">Nicolas<br><span class="gradient-text">Canadell</span></h1>
-                <p class="hero-sub">Administrateur systèmes & réseaux en devenir. Passionné par l'infrastructure, la cybersécurité et l'automatisation.</p>
+                <p class="hero-sub">Administrateur systèmes &amp; réseaux en devenir. Passionné par l'infrastructure, la cybersécurité et l'automatisation.</p>
                 <div class="hero-cta">
                     <a href="#projects" class="btn btn-primary">Mes projets <span class="btn-arrow">→</span></a>
                     <a href="#contact"  class="btn btn-ghost">Me contacter</a>
@@ -90,7 +96,7 @@
                             </div>
                             <div class="id-info">
                                 <div class="id-row"><span class="id-key">Formation</span><span class="id-val">Lycée Ozenne, Toulouse</span></div>
-                                <div class="id-row"><span class="id-key">Spécialité</span><span class="id-val">SISR — Réseaux & Infra</span></div>
+                                <div class="id-row"><span class="id-key">Spécialité</span><span class="id-val">SISR — Réseaux &amp; Infra</span></div>
                                 <div class="id-row"><span class="id-key">Disponibilité</span><span class="id-val dot-green">Septembre 2026</span></div>
                             </div>
                         </div>
@@ -115,7 +121,7 @@
                             </div>
                             <h3>BTS SIO – Option SISR</h3>
                             <p class="tl-place">Lycée Ozenne, Toulouse</p>
-                            <p>Administration réseau (Cisco), virtualisation, services systèmes Windows & Linux, Active Directory, cybersécurité et développement web.</p>
+                            <p>Administration réseau (Cisco), virtualisation, services systèmes Windows &amp; Linux, Active Directory, cybersécurité et développement web.</p>
                         </div>
                     </div>
 
@@ -126,7 +132,7 @@
                                 <span class="tl-date">Sept. 2023</span>
                                 <span class="tl-badge study">Formation</span>
                             </div>
-                            <h3>Licence 1 Géographie & Aménagement du Territoire</h3>
+                            <h3>Licence 1 Géographie &amp; Aménagement du Territoire</h3>
                             <p class="tl-place">UT2J Jean Jaurès, Toulouse</p>
                             <p>Année universitaire développant l'analyse systémique, la cartographie et la lecture critique du territoire.</p>
                         </div>
@@ -211,17 +217,59 @@
                 <h2 class="section-title">Compétences</h2>
                 <div class="skills-layout">
                     <div class="skill-category">
-                        <h3 class="skill-cat-title">Systèmes & Réseaux</h3>
-                        <div class="skill-bar-wrap"><span class="skill-name">Cisco IOS / Packet Tracer</span><div class="bar"><div class="bar-fill" data-w="80"></div></div></div>
-                        <div class="skill-bar-wrap"><span class="skill-name">Virtualisation (Proxmox, VMware)</span><div class="bar"><div class="bar-fill" data-w="70"></div></div></div>
-                        <div class="skill-bar-wrap"><span class="skill-name">Windows Server / Active Directory</span><div class="bar"><div class="bar-fill" data-w="75"></div></div></div>
-                        <div class="skill-bar-wrap"><span class="skill-name">Linux (Admin, Shell)</span><div class="bar"><div class="bar-fill" data-w="65"></div></div></div>
+                        <h3 class="skill-cat-title">Systèmes &amp; Réseaux</h3>
+                        <div class="skill-bar-wrap">
+                            <div class="skill-name-row">
+                                <span class="skill-name">Cisco IOS / Packet Tracer</span>
+                                <span class="skill-pct">80%</span>
+                            </div>
+                            <div class="bar"><div class="bar-fill" data-w="80"></div></div>
+                        </div>
+                        <div class="skill-bar-wrap">
+                            <div class="skill-name-row">
+                                <span class="skill-name">Virtualisation (Proxmox, VMware)</span>
+                                <span class="skill-pct">70%</span>
+                            </div>
+                            <div class="bar"><div class="bar-fill" data-w="70"></div></div>
+                        </div>
+                        <div class="skill-bar-wrap">
+                            <div class="skill-name-row">
+                                <span class="skill-name">Windows Server / Active Directory</span>
+                                <span class="skill-pct">75%</span>
+                            </div>
+                            <div class="bar"><div class="bar-fill" data-w="75"></div></div>
+                        </div>
+                        <div class="skill-bar-wrap">
+                            <div class="skill-name-row">
+                                <span class="skill-name">Linux (Admin, Shell)</span>
+                                <span class="skill-pct">65%</span>
+                            </div>
+                            <div class="bar"><div class="bar-fill" data-w="65"></div></div>
+                        </div>
                     </div>
                     <div class="skill-category">
                         <h3 class="skill-cat-title">Développement Web</h3>
-                        <div class="skill-bar-wrap"><span class="skill-name">HTML / CSS</span><div class="bar"><div class="bar-fill" data-w="88"></div></div></div>
-                        <div class="skill-bar-wrap"><span class="skill-name">JavaScript</span><div class="bar"><div class="bar-fill" data-w="65"></div></div></div>
-                        <div class="skill-bar-wrap"><span class="skill-name">PHP / MySQL</span><div class="bar"><div class="bar-fill" data-w="60"></div></div></div>
+                        <div class="skill-bar-wrap">
+                            <div class="skill-name-row">
+                                <span class="skill-name">HTML / CSS</span>
+                                <span class="skill-pct">88%</span>
+                            </div>
+                            <div class="bar"><div class="bar-fill" data-w="88"></div></div>
+                        </div>
+                        <div class="skill-bar-wrap">
+                            <div class="skill-name-row">
+                                <span class="skill-name">JavaScript</span>
+                                <span class="skill-pct">65%</span>
+                            </div>
+                            <div class="bar"><div class="bar-fill" data-w="65"></div></div>
+                        </div>
+                        <div class="skill-bar-wrap">
+                            <div class="skill-name-row">
+                                <span class="skill-name">PHP / MySQL</span>
+                                <span class="skill-pct">60%</span>
+                            </div>
+                            <div class="bar"><div class="bar-fill" data-w="60"></div></div>
+                        </div>
                     </div>
                     <div class="skill-category">
                         <h3 class="skill-cat-title">Savoir-être</h3>
@@ -251,13 +299,13 @@
                                 <th>Compétence</th>
                                 <th>Contexte d'acquisition</th>
                                 <th>Niveau</th>
-                                <th>Proof</th>
+                                <th>Preuve</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>Administration réseau (Cisco)</td>
-                                <td>BTS SIO – Cours & TP</td>
+                                <td>BTS SIO – Cours &amp; TP</td>
                                 <td><span class="level-badge lvl-b">Intermédiaire</span></td>
                                 <td>Projets Packet Tracer</td>
                             </tr>
@@ -269,7 +317,7 @@
                             </tr>
                             <tr>
                                 <td>Windows Server / Active Directory</td>
-                                <td>BTS SIO – TP & Stage</td>
+                                <td>BTS SIO – TP &amp; Stage</td>
                                 <td><span class="level-badge lvl-b">Intermédiaire</span></td>
                                 <td>Stages Police Scientifique</td>
                             </tr>
@@ -277,7 +325,7 @@
                                 <td>Linux (Admin, Bash)</td>
                                 <td>BTS SIO – TP</td>
                                 <td><span class="level-badge lvl-c">Notions</span></td>
-                                <td>Scripts & config serveurs</td>
+                                <td>Scripts &amp; config serveurs</td>
                             </tr>
                             <tr>
                                 <td>HTML / CSS</td>
@@ -313,7 +361,7 @@
                     <div class="project-card glass-card">
                         <div class="project-number">01</div>
                         <h3>Portfolio Personnel</h3>
-                        <p>Site web responsive & animé présentant mon parcours en BTS SIO, développé entièrement à la main.</p>
+                        <p>Site web responsive &amp; animé présentant mon parcours en BTS SIO, développé entièrement à la main.</p>
                         <div class="project-tags">
                             <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
                         </div>
@@ -337,7 +385,7 @@
                     <div class="project-card glass-card">
                         <div class="project-number">03</div>
                         <h3>Infra Réseau VLAN / TOIP</h3>
-                        <p>Configuration complète de switches & routeurs Cisco avec segmentation VLAN, DHCP, et déploiement VoIP simulé sous Packet Tracer.</p>
+                        <p>Configuration complète de switches &amp; routeurs Cisco avec segmentation VLAN, DHCP, et déploiement VoIP simulé sous Packet Tracer.</p>
                         <div class="project-tags">
                             <span class="tag">Cisco</span><span class="tag">VLAN</span><span class="tag">VoIP</span>
                         </div>
@@ -348,7 +396,7 @@
 
                     <div class="project-card project-card--cta glass-card">
                         <div class="project-cta-inner">
-                            <p class="project-cta-label">Voir tous les projets ?</p>
+                            <p class="project-cta-label">D'autres projets à venir ?</p>
                             <a href="#contact" class="btn btn-primary">Me contacter →</a>
                         </div>
                     </div>
@@ -365,7 +413,7 @@
                 <div class="veille-grid">
 
                     <div class="veille-card glass-card">
-                        <div class="veille-icon">🔒</div>
+                        <div class="veille-icon-wrap"><span class="veille-icon">🔒</span></div>
                         <h3>Cybersécurité</h3>
                         <p>Suivi des actualités sur les failles, CVE, ransomwares et bonnes pratiques de sécurisation des systèmes et réseaux.</p>
                         <div class="veille-sources">
@@ -376,8 +424,8 @@
                     </div>
 
                     <div class="veille-card glass-card">
-                        <div class="veille-icon">🌐</div>
-                        <h3>Infrastructure & Cloud</h3>
+                        <div class="veille-icon-wrap"><span class="veille-icon">🌐</span></div>
+                        <h3>Infrastructure &amp; Cloud</h3>
                         <p>Évolutions des technologies de virtualisation, conteneurisation (Docker, Kubernetes) et solutions cloud hybrides.</p>
                         <div class="veille-sources">
                             <span class="tag">LeMagIT</span>
@@ -387,7 +435,7 @@
                     </div>
 
                     <div class="veille-card glass-card">
-                        <div class="veille-icon">📡</div>
+                        <div class="veille-icon-wrap"><span class="veille-icon">📡</span></div>
                         <h3>Réseaux</h3>
                         <p>Nouvelles normes (Wi-Fi 7, IPv6 adoption), évolutions des protocoles de routage et actualités Cisco.</p>
                         <div class="veille-sources">
@@ -447,9 +495,13 @@
     <!-- Footer -->
     <footer class="footer">
         <p>© 2026 Nicolas Canadell · BTS SIO SISR · Lycée Ozenne, Toulouse</p>
-        <p class="footer-sub">Conçu & développé à la main avec 💙</p>
+        <p class="footer-sub">Conçu &amp; développé à la main avec 💙</p>
     </footer>
+
+    <!-- Bouton retour en haut -->
+    <a href="#hero" class="back-to-top" id="back-to-top" aria-label="Retour en haut">↑</a>
 
     <script src="script.js"></script>
 </body>
+
 </html>
