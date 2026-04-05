@@ -1,8 +1,3 @@
-/* ===================================================
-   index.css — Nicolas Canadell Portfolio v3
-   Top navbar · Hero centré · Clean & pratique
-   =================================================== */
-
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -278,10 +273,10 @@ body::before {
 
 .hero-name {
   font-family: var(--font-head);
-  font-size: clamp(3.6rem, 10vw, 7rem);
+  font-size: clamp(2.8rem, 7vw, 5rem);
   font-weight: 900;
-  line-height: 0.93; letter-spacing: -0.04em;
-  color: var(--text); margin-bottom: 24px;
+  line-height: 0.95; letter-spacing: -0.03em;
+  color: var(--text); margin-bottom: 20px;
 }
 
 .gradient-text {
@@ -291,9 +286,15 @@ body::before {
 }
 
 .hero-sub {
-  font-size: 1.05rem; color: var(--text-muted);
-  margin-bottom: 40px; line-height: 1.9;
-  max-width: 520px;
+  font-size: 1rem; color: var(--text);
+  margin-bottom: 36px; line-height: 1.7;
+  font-weight: 500;
+}
+.hero-sub-detail {
+  display: block;
+  font-size: 0.82rem; color: var(--text-muted);
+  font-weight: 400; margin-top: 4px;
+  letter-spacing: 0.01em;
 }
 
 .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
@@ -331,41 +332,9 @@ body::before {
 /* ═══════════════════════════════════════════
    ABOUT
    ═══════════════════════════════════════════ */
-.about-grid { display: grid; grid-template-columns: 1fr 300px; gap: 52px; align-items: start; }
+.about-grid { display: block; max-width: 860px; }
 .about-text p { color: var(--text-muted); margin-bottom: 14px; font-size: 0.96rem; line-height: 1.85; }
 .about-text strong { color: var(--text); font-weight: 600; }
-
-.about-stats { display: flex; gap: 28px; margin-top: 36px; flex-wrap: wrap; }
-.stat { display: flex; flex-direction: column; gap: 4px; }
-.stat-number {
-  font-family: var(--font-head); font-size: 2.4rem; font-weight: 800; line-height: 1;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-}
-.stat-label { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; }
-
-.id-card { padding: 24px; }
-.id-card-header { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
-.id-avatar {
-  width: 48px; height: 48px; border-radius: 12px;
-  background: linear-gradient(135deg, var(--accent), #7c3aed);
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-head); font-size: 0.9rem; font-weight: 700; color: #fff; flex-shrink: 0;
-  box-shadow: 0 6px 18px rgba(108,99,255,0.3);
-}
-.id-name { font-family: var(--font-head); font-weight: 700; font-size: 0.95rem; margin-bottom: 2px; }
-.id-role { font-size: 0.74rem; color: var(--text-muted); }
-
-.id-info { display: flex; flex-direction: column; gap: 0; }
-.id-row {
-  display: flex; justify-content: space-between; align-items: center; gap: 12px;
-  padding: 10px 0; border-bottom: 1px solid var(--border);
-}
-.id-row:last-child { border-bottom: none; }
-.id-key { font-size: 0.71rem; color: var(--text-muted); flex-shrink: 0; }
-.id-val { font-size: 0.81rem; font-weight: 500; text-align: right; }
-.dot-green { color: var(--green); }
-.dot-green::before { content: '● '; font-size: 0.55em; vertical-align: middle; }
 
 /* ═══════════════════════════════════════════
    TIMELINE
@@ -399,7 +368,7 @@ body::before {
 .tl-badge { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 9px; border-radius: 100px; }
 .tl-badge.study { background: rgba(108,99,255,0.12); color: var(--accent-2); border: 1px solid rgba(108,99,255,0.22); }
 .tl-badge.it    { background: rgba(52,211,153,0.12);  color: var(--green);   border: 1px solid rgba(52,211,153,0.25); }
-.tl-badge.other { background: rgba(251,191,36,0.12);  color: var(--amber);   border: 1px solid rgba(251,191,36,0.25); }
+.tl-badge.other { background: rgba(45,212,191,0.12); color: #2dd4bf; border: 1px solid rgba(45,212,191,0.25); }
 
 .tl-content h3 { font-family: var(--font-head); font-size: 0.98rem; font-weight: 600; margin-bottom: 4px; }
 .tl-place { font-size: 0.77rem; color: var(--accent-2); margin-bottom: 8px; font-weight: 500; }
@@ -612,8 +581,6 @@ body::before {
    RESPONSIVE
    ═══════════════════════════════════════════ */
 @media (max-width: 900px) {
-  .about-grid           { grid-template-columns: 1fr; }
-  .about-card-wrap      { order: -1; max-width: 360px; }
   .skills-layout        { grid-template-columns: 1fr; }
   .skill-category:last-child { grid-column: 1; }
   .projects-grid        { grid-template-columns: 1fr; }
