@@ -81,3 +81,33 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
   });
 });
+
+/* ── 10. PDF MODAL ── */
+const docBtns = document.querySelectorAll('.doc-btn');
+const pdfModal = document.getElementById('pdf-modal');
+const pdfIframe = document.getElementById('pdf-iframe');
+const closeModal = document.getElementById('close-modal');
+const openNewTab = document.getElementById('open-new-tab');
+
+if (pdfModal) {
+  docBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const pdfUrl = btn.getAttribute('data-pdf');
+      pdfIframe.src = pdfUrl;
+      if (openNewTab) openNewTab.href = pdfUrl;
+      pdfModal.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  closeModal.addEventListener('click', closePdfModal);
+  pdfModal.addEventListener('click', e => {
+    if (e.target === pdfModal) closePdfModal();
+  });
+
+  function closePdfModal() {
+    pdfModal.classList.remove('show');
+    document.body.style.overflow = '';
+    setTimeout(() => { pdfIframe.src = ''; }, 300);
+  }
+}
